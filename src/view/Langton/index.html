@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="ta-c fs24"><span class="dis-ib ant">🐜</span>兰顿蚂蚁🐜</h1>
+  <section class="grid-container ta-c">
+    <ul class="p0 dis-ib">
+      <li v-for="(row,x) in grid">
+        <span
+          v-for="(cell,y) in row"
+          :class="[
+            'cell',
+            {black: cell.isBlack},
+            {ant: x == ant.location.x && y == ant.location.y}
+          ]"
+        ></span>
+      </li>
+    </ul>
+    <!-- <table>
+      <tr v-for="row in grid">
+        <td class="cell border dis-ib" v-for="cell in row"></td>
+      </tr>
+    </table> -->
+  </section>
+  <div class="control">
+    <p>当前前进方向：<i class="dis-ib w40">{{ant.direction}}</i></p>
+    <p>已走步数： <i class="dis-ib w40">{{step}}</i></p>
+    <span @click="handleStep">▶️</span>
+    <span @click="handleRun">⏩</span>
+    <span @click="handlePause">⏸</span>
+  </div>
+
+  <audio src="../../../static/mario.mp3" id="mario"></audio>
+  <audio src="../../../static/coin.mp3" id="coin"></audio>
+</div>
