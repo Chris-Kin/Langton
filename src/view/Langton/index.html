@@ -1,25 +1,41 @@
 <div class="container">
-  <h1 class="ta-c fs24"><span class="dis-ib ant">🐜</span>兰顿蚂蚁🐜</h1>
-  <section class="grid-container ta-c">
-    <ul class="p0 dis-ib">
-      <li v-for="(row,x) in grid">
-        <span
-          v-for="(cell,y) in row"
-          :class="[
-            'cell',
-            {black: cell.isBlack},
-            {ant: x == ant.location.x && y == ant.location.y}
-          ]"
-        ></span>
-      </li>
-    </ul>
-  </section>
-  <div class="control">
-    <p>当前前进方向：<i class="dis-ib w40">{{ant.direction}}</i></p>
-    <p>已走步数：<i class="dis-ib w40">{{step}}</i></p>
-    <span @click="handleStep">▶️</span>
-    <span @click="handleRun">⏩</span>
-    <span @click="handlePause">⏸</span>
+  <div v-if="!hasInit" class="ta-c input-wrapper">
+    <p style="margin-left: -80px;">
+      <span class="dis-ib ta-r w200 mr20">方格宽度</span>
+      <input class="input w100" type="number" v-model="width">
+    </p>
+    <p style="margin-left: -80px;">
+      <span class="dis-ib ta-r w200 mr20">方格高度</span>
+      <input class="input w100" type="number" v-model="height">
+    </p>
+    <button class="button" @click="handleInit">创建</button>
+  </div>
+  <div v-else>
+    <h1 class="ta-c fs24">
+      <span class="dis-ib ant">🐜</span>兰顿蚂蚁🐜
+    </h1>
+    <section class="grid-container ta-c">
+      <ul class="p0 dis-ib">
+        <li v-for="(row,x) in grid">
+          <span v-for="(cell,y) in row" :class="[
+                'cell',
+                {black: cell.isBlack},
+                {ant: x == ant.location.x && y == ant.location.y}
+              ]"></span>
+        </li>
+      </ul>
+    </section>
+    <div class="control">
+      <p>当前前进方向：
+        <i class="dis-ib w40">{{ant.direction}}</i>
+      </p>
+      <p>已走步数：
+        <i class="dis-ib w40">{{step}}</i>
+      </p>
+      <span @click="handleStep">▶️</span>
+      <span @click="handleRun">⏩</span>
+      <span @click="handlePause">⏸</span>
+    </div>
   </div>
 
   <audio type="audio/mpeg" src="/static/mario.mp3" id="mario"></audio>

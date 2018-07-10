@@ -7,6 +7,9 @@ export default {
     return {
       step: 0,
       interval: null,
+      hasInit: false,
+      width: 100,
+      height: 100,
     };
   },
   computed: {
@@ -16,6 +19,9 @@ export default {
     ]),
   },
   methods: {
+    handleInit() {
+      this.hasInit = true;
+    },
     handleRun() {
       if (this.interval) {
         return;
