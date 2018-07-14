@@ -18,6 +18,14 @@ export default {
       'grid',
     ]),
   },
+  watch: {
+    width(val) {
+      this.$store.commit('test/SET_WIDTH', val);
+    },
+    height(val) {
+      this.$store.commit('test/SET_HEIGHT', val);
+    },
+  },
   methods: {
     handleInit() {
       this.hasInit = true;

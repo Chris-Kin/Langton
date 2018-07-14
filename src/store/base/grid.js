@@ -5,7 +5,9 @@ const grid = [];
 for (let i = 0; i < config.size; i += 1) {
   const row = [];
   for (let j = 0; j < config.size; j += 1) {
-    row.push({ ...config.cellObj });
+    row.push({
+      isBlack: false,
+    });
   }
   grid.push(row);
 }
