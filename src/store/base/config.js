@@ -1,12 +1,12 @@
 const config = {
-  size: 10,
+  size: 80,
   cellObj: {
     isBlack: false,
   },
   originBlackCells: [],
   originLocation: {
-    x: 5,
-    y: 5,
+    x: 40,
+    y: 40,
   },
   originDirection: 'down',
 };
