@@ -8,6 +8,12 @@
 console.log(123);
 export default {
   name: 'App',
+  beforeMount() {
+    console.log('beforeMount');
+  },
+  mounted() {
+    console.log('mounted');
+  },
 };
 </script>
 
