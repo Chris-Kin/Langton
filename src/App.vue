@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    guaguajiao
     <router-view/>
   </div>
 </template>
