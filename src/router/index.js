@@ -6,10 +6,10 @@ import LangtonAnt from '@/view/Langton';
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   routes: [
     {
-      path: '/a',
+      path: '/',
       name: 'LangtonAnt',
       component: LangtonAnt,
     },

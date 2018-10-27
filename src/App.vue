@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    guaguajiao
+    guaguajiao<br />
+    {{good}}
     <router-view/>
   </div>
 </template>
@@ -9,6 +10,11 @@
 console.log(123);
 export default {
   name: 'App',
+  data() {
+    return {
+      good: '123',
+    }
+  },
   beforeMount() {
     console.log('beforeMount');
   },
