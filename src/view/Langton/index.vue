@@ -60,6 +60,9 @@ export default {
       // mario.load();
     },
   },
+  created() {
+    console.log('create..');
+  },
   mounted() {
     console.log(12);
     window.addEventListener('keydown', (e) => {
