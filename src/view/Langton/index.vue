@@ -7,7 +7,7 @@ export default {
     return {
       step: 0,
       interval: null,
-      hasInit: false,
+      hasInit: true,
       width: 100,
       height: 100,
     };
