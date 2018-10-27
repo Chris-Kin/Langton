@@ -57,14 +57,9 @@ export default {
       this.interval = null;
       const mario = document.getElementById('mario');
       mario.pause();
-      // mario.load();
     },
   },
-  created() {
-    console.log('create..');
-  },
   mounted() {
-    console.log(12);
     window.addEventListener('keydown', (e) => {
       if (e.keyCode === 32) {
         this.handleStep();
