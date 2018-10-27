@@ -61,6 +61,7 @@ export default {
     },
   },
   mounted() {
+    console.log(12);
     window.addEventListener('keydown', (e) => {
       if (e.keyCode === 32) {
         this.handleStep();
